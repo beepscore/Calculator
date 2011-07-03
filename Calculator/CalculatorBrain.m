@@ -18,11 +18,11 @@
 
 -(void)performWaitingOperation{
     if ([@"+" isEqualToString:waitingOperation]) {
-        operand += waitingOperand;
+        operand = waitingOperand + operand;
     } else if ([@"*" isEqualToString:waitingOperation]) {
-        operand *= waitingOperand;
+        operand = waitingOperand * operand;
     } else if ([@"-" isEqualToString:waitingOperation]) {
-        operand -= waitingOperand;
+        operand = waitingOperand - operand;
     } else if ([@"/" isEqualToString:waitingOperation]) {        
         if (operand) {
             operand = waitingOperand / operand; 
