@@ -46,4 +46,13 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+- (IBAction)digitPressed:(UIButton *)sender{
+    
+}
+
+
+- (IBAction)operationPressed:(UIButton *)sender{
+    
+}
+
 @end
