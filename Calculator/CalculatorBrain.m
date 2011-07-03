@@ -42,12 +42,14 @@
         if (operand) {
             operand = 1 / operand;
         }        
-    } else if ([@"+/-" isEqualToString:operation]) {
-        
+    } else if ([@"+/-" isEqualToString:operation]) {        
         if (operand) {
             operand = -operand;
         } // else operand is zero, don't retun "-0"
-        
+    } else if ([operation isEqualToString:@"sin"]) {
+            operand = sin(operand);
+    } else if ([operation isEqualToString:@"cos"]) {
+        operand = cos(operand);
     } else {
         [self performWaitingOperation];
         waitingOperation = operation;
