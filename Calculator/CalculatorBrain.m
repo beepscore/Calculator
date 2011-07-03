@@ -23,8 +23,7 @@
         operand *= waitingOperand;
     } else if ([@"-" isEqualToString:waitingOperation]) {
         operand -= waitingOperand;
-    } else if ([@"/" isEqualToString:waitingOperation]) {
-        
+    } else if ([@"/" isEqualToString:waitingOperation]) {        
         if (operand) {
             operand = waitingOperand / operand; 
         }
@@ -39,6 +38,10 @@
         if (operand >= 0.) {
             operand = sqrt(operand);
         }
+    } else if ([operation isEqualToString:@"1/x"]) {
+        if (operand) {
+            operand = 1 / operand;
+        }        
     } else if ([@"+/-" isEqualToString:operation]) {
         operand = -operand;
     } else {
