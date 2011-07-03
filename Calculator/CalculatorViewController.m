@@ -16,7 +16,8 @@
     }
     return brain;
 }
-   
+ 
+
 - (IBAction)digitPressed:(UIButton *)sender{
     
     NSString *digit = [[sender titleLabel] text];
@@ -24,6 +25,7 @@
     if (userIsInTheMiddleOfTypingANumber) {
         [display setText:[[display text] stringByAppendingString:digit]];
     } else {
+        // first digit press
         [display setText:digit];
         userIsInTheMiddleOfTypingANumber = YES;
     }
