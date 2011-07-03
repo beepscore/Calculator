@@ -43,7 +43,11 @@
             operand = 1 / operand;
         }        
     } else if ([@"+/-" isEqualToString:operation]) {
-        operand = -operand;
+        
+        if (operand) {
+            operand = -operand;
+        } // else operand is zero, don't retun "-0"
+        
     } else {
         [self performWaitingOperation];
         waitingOperation = operation;
