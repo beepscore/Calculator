@@ -16,7 +16,7 @@
     }
     return brain;
 }
- 
+
 
 - (IBAction)digitPressed:(UIButton *)sender{
     
@@ -29,6 +29,19 @@
         [display setText:digit];
         userIsInTheMiddleOfTypingANumber = YES;
     }
+}
+
+
+- (IBAction)decimalPressed:(UIButton *)sender{
+    
+    NSString *decimalSeparator = [[sender titleLabel] text];
+    BOOL displayContainsDecimalSeparator = ([[display text] rangeOfString:decimalSeparator].length > 0);
+    if (!displayContainsDecimalSeparator) {
+        // display text is either initial "0" or number user is in the middle of typing
+        // append decimal separator
+        [display setText:[[display text] stringByAppendingString:decimalSeparator]];
+        userIsInTheMiddleOfTypingANumber = YES;
+    }                                            
 }
 
 

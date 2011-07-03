@@ -18,6 +18,7 @@
 }
 
 - (IBAction)digitPressed:(UIButton *)sender;
+- (IBAction)decimalPressed:(UIButton *)sender;
 - (IBAction)operationPressed:(UIButton *)sender;
 
 @end
