@@ -46,10 +46,14 @@
         if (operand) {
             operand = -operand;
         } // else operand is zero, don't retun "-0"
-    } else if ([operation isEqualToString:@"sin"]) {
-            operand = sin(operand);
     } else if ([operation isEqualToString:@"cos"]) {
         operand = cos(operand);
+    } else if ([operation isEqualToString:@"sin"]) {
+            operand = sin(operand);
+    } else if ([operation isEqualToString:@"Store"]) {
+        memoryValue = operand;
+    } else if ([operation isEqualToString:@"Recall"]) {
+        operand = memoryValue;
     } else {
         [self performWaitingOperation];
         waitingOperation = operation;
