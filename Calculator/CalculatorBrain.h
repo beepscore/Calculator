@@ -18,7 +18,6 @@
 }
 
 @property (nonatomic, assign) double operand;
--(void)setOperand:(double)aDouble;
 // use NSString* parameter for simplicity
 -(double)performOperation:(NSString *)operation;
 

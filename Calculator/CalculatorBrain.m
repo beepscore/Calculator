@@ -13,11 +13,6 @@
 
 @synthesize operand;
 
--(void)setOperand:(double)aDouble{
-    operand = aDouble;
-}
-
-
 -(void)performWaitingOperation{
     if ([@"+" isEqualToString:waitingOperation]) {
         operand = waitingOperand + operand;
