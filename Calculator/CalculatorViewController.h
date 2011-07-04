@@ -12,6 +12,9 @@
 @interface CalculatorViewController : UIViewController {
     // In Objective-C, if an object inherits from NSObject 
     // it's instance variables are automatically initialized to zero.
+    // default ivar access is @protected (class and subclass can access).
+    // Teacher recommends mark all ivars @private, use other classes access via properties.
+@private
     IBOutlet UILabel *display;
     CalculatorBrain *brain;
     BOOL userIsInTheMiddleOfTypingANumber;

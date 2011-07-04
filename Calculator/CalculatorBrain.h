@@ -10,6 +10,7 @@
 
 
 @interface CalculatorBrain : NSObject {
+@private
     double operand;
     double waitingOperand;
     NSString *waitingOperation;
