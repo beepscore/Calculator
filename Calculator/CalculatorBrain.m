@@ -11,6 +11,8 @@
 
 @implementation CalculatorBrain
 
+@synthesize operand;
+
 -(void)setOperand:(double)aDouble{
     operand = aDouble;
 }

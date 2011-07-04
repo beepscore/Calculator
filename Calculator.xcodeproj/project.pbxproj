@@ -118,12 +118,12 @@
 			children = (
 				DE11AFF613C00A1100476484 /* CalculatorAppDelegate.h */,
 				DE11AFF713C00A1100476484 /* CalculatorAppDelegate.m */,
+				DEC2C44013C012850070FC59 /* CalculatorBrain.h */,
+				DEC2C44113C012850070FC59 /* CalculatorBrain.m */,
 				DE11AFF913C00A1100476484 /* MainWindow.xib */,
 				DE11AFFC13C00A1100476484 /* CalculatorViewController.h */,
 				DE11AFFD13C00A1100476484 /* CalculatorViewController.m */,
 				DE11AFFF13C00A1100476484 /* CalculatorViewController.xib */,
-				DEC2C44013C012850070FC59 /* CalculatorBrain.h */,
-				DEC2C44113C012850070FC59 /* CalculatorBrain.m */,
 				DE11AFEE13C00A1100476484 /* Supporting Files */,
 			);
 			path = Calculator;
