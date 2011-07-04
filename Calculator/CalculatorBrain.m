@@ -54,6 +54,16 @@
         memoryValue = operand;
     } else if ([operation isEqualToString:@"Recall"]) {
         operand = memoryValue;
+    } else if ([operation isEqualToString:@"M+"]) {
+        // add the current value of the display to whatever’s already in memory.
+        // don't change the number in the display
+        memoryValue = memoryValue + operand;
+    } else if ([operation isEqualToString:@"C"]) {
+        // clear everything (the display, any “waiting” operations, and the memory)
+        operand = 0;
+        memoryValue = 0;
+        waitingOperand = 0;
+        waitingOperation = 0;
     } else {
         [self performWaitingOperation];
         waitingOperation = operation;

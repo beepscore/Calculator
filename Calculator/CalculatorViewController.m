@@ -18,20 +18,6 @@
 }
 
 
-- (IBAction)digitPressed:(UIButton *)sender{
-    
-    NSString *digit = [[sender titleLabel] text];
-    
-    if (userIsInTheMiddleOfTypingANumber) {
-        [display setText:[[display text] stringByAppendingString:digit]];
-    } else {
-        // first digit press
-        [display setText:digit];
-        userIsInTheMiddleOfTypingANumber = YES;
-    }
-}
-
-
 - (IBAction)constantSymbolPressed:(UIButton *)sender{
     
     // approximate constants such as pi and e
@@ -42,9 +28,9 @@
     // This fixed the problem.
     // Reference: http://stackoverflow.com/questions/5133606/handling-special-charaters-o-a-in-objective-c-iphone
     if ([@"π" isEqualToString:constantSymbol]) {
-                [display setText:[NSString stringWithFormat:@"%g", M_PI]];
+        [display setText:[NSString stringWithFormat:@"%g", M_PI]];
     }
-        userIsInTheMiddleOfTypingANumber = YES;                                           
+    userIsInTheMiddleOfTypingANumber = YES;                                           
 }
 
 
@@ -58,6 +44,20 @@
         [display setText:[[display text] stringByAppendingString:decimalSeparator]];
         userIsInTheMiddleOfTypingANumber = YES;
     }                                            
+}
+
+
+- (IBAction)digitPressed:(UIButton *)sender{
+    
+    NSString *digit = [[sender titleLabel] text];
+    
+    if (userIsInTheMiddleOfTypingANumber) {
+        [display setText:[[display text] stringByAppendingString:digit]];
+    } else {
+        // first digit press
+        [display setText:digit];
+        userIsInTheMiddleOfTypingANumber = YES;
+    }
 }
 
 
