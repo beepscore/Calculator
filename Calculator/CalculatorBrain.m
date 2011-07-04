@@ -63,7 +63,7 @@
         operand = 0;
         memoryValue = 0;
         waitingOperand = 0;
-        waitingOperation = 0;
+        waitingOperation = nil;
     } else {
         [self performWaitingOperation];
         waitingOperation = operation;
