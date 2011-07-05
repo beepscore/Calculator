@@ -8,10 +8,15 @@
 
 #import "CalculatorViewController.h"
 
+@interface CalculatorViewController ()
+@property (readonly) CalculatorBrain *brain;
+@end
+
 @implementation CalculatorViewController
 
 - (CalculatorBrain *)brain{
     if (!brain) {
+        // lazily instantiate brain
         brain = [[CalculatorBrain alloc] init];
     }
     return brain;
@@ -52,7 +57,7 @@
     NSString *digit = sender.titleLabel.text;
     
     if (userIsInTheMiddleOfTypingANumber) {
-        [display setText:[[display text] stringByAppendingString:digit]];
+        display.text = [display.text stringByAppendingString:digit];
     } else {
         // first digit press
         display.text = digit;
@@ -63,11 +68,11 @@
 
 - (IBAction)operationPressed:(UIButton *)sender{
     if (userIsInTheMiddleOfTypingANumber) {
-        [self brain].operand = [display.text doubleValue];
+        self.brain.operand = [display.text doubleValue];
         userIsInTheMiddleOfTypingANumber = NO;
     }    
     NSString *operation = sender.titleLabel.text;
-    double result = [[self brain] performOperation:operation];
+    double result = [self.brain performOperation:operation];
     display.text = [NSString stringWithFormat:@"%g", result];
 }
 
